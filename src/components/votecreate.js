@@ -70,6 +70,9 @@ class Create extends Component {
 		});
 		if(this.props.id){
 			encrease.map((v, i) => {
+				if(!this.props.ops[i].vote){
+					alert("something woring!! please try again");
+				}
 				voteinfo.options[i].vote= this.props.ops[i].vote+ v; //can not read vote????
 			})
 		}
