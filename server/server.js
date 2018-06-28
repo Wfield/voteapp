@@ -9,7 +9,7 @@ import user from './routes/user'
 import vote from './routes/vote'
 
 const PORT= process.env.PORT|| 9000
-const dbURL =process.env.MONGODB_URI|| 'mongodb://localhost:27017/voteapp'
+const dbURL =process.env.PROD_MONGODB|| 'mongodb://localhost:27017/voteapp'
 
 const app= express()
 app.use(express.static(path.join(__dirname, '../src')))
