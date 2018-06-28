@@ -1,5 +1,6 @@
 import express from 'express'
 import React from 'react'
+import history from 'connect-history-api-fallback'
 import path from 'path'
 import ejs from 'ejs'
 import mongoose from 'mongoose'
@@ -14,6 +15,18 @@ app.use(express.static(path.join(__dirname, '../src')))
 app.set('views', path.join(__dirname, '../src'))
 app.set('view engine', 'html')
 app.engine('html', ejs.renderFile)
+
+app.use(history({
+	rewrites:[
+		{from: /^\/vote\/.*$/, to: function(context){
+			return context.parsedUrl.pathname;
+		}},
+		{from: /^\/user\/.*$/, to: function(context){
+			return context.parsedUrl.path;
+		}},
+		{from: /\/.*/, to: '/'}
+	]
+}))
 
 app.get('/', function(req, res, next){
 	res.render('index');

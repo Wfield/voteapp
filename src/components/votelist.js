@@ -24,12 +24,12 @@ class Votelist extends Component {
 				return err;
 			}
 		})
-		.then((response) => response.json())
+		.then((response) => response.json()) //err???
 		.then((resData) => {
 			this.setState({voteList: resData});
 		})
 		.catch((err) =>{
-			console.log(err);
+			console.log(err);  //??????
 			if(err.state== 401){
 				alert('login outdate, login again');
 				return;
