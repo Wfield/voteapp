@@ -9,6 +9,7 @@ import user from './routes/user'
 import vote from './routes/vote'
 
 const PORT= process.env.PORT|| 9000
+const dbURL =process.env.MONGODB_URI|| 'mongodb://localhost:27017/voteapp'
 
 const app= express()
 app.use(express.static(path.join(__dirname, '../src')))
@@ -33,7 +34,7 @@ app.get('/', function(req, res, next){
 	//next();
 })
 
-mongoose.connect("mongodb://localhost:27017/voteapp")
+mongoose.connect(dbURL)
 const db= mongoose.connection
 db.on('error', (err) => console.error("mongodb connect faild!"+ err))
 db.on('open', () => console.log('mongodb connect success!'))

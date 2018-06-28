@@ -65,42 +65,4 @@ router.post('/login', function(req, res){
 	})
 })
 
-// router.get('/userinfo', function(req, res){
-// 	let info= {};
-// 	Models.User.findOne({_id: req.query.userId}, function(err, doc){
-// 		if(err){
-// 			res.send({ title: err, content: "something wrong"});
-// 		}
-// 		else{
-// 			if(doc){
-// 				info={
-// 					username: doc.username,
-// 					email: doc.email,
-// 				}
-// 				res.send(info);
-// 			}
-// 		}
-// 	})
-// })
-
-// router.get('/fetchvote', function(req, res){
-// 	let userId= req.query.userId;
-// 	Models.Vote.find({user: userId}).exec(function(err, docs){
-// 		if(err){
-// 			res.send(err);
-// 		}
-// 		else{
-// 			let json= {};
-// 			docs.forEach(function(item){
-// 				json.push({
-// 					voteId: item._id,
-// 					title: item.title,
-// 					content: item.describe
-// 				})
-// 			})
-// 			res.send({ title: 1, content: json});
-// 		}
-// 	})
-// })
-
 export default router
