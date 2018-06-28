@@ -13,7 +13,7 @@ class Votelist extends Component {
 	}
 
 	componentDidMount() {
-		fetch("http://localhost:9000/vote/fetchList")
+		fetch("https://secure-castle-72860.herokuapp.com/vote/fetchList")
 		.then((res)=>{
 			if(res.ok){
 				return res;

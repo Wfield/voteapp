@@ -26,7 +26,7 @@ class Log extends Component {
 			},
 			body: JSON.stringify(userInfo)
 		}
-		fetch('http://localhost:9000/user/login', init)
+		fetch('https://secure-castle-72860.herokuapp.com/user/login', init)
 		.then((res) => {
 			if(res.ok){
 				return res;

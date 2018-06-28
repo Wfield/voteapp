@@ -12,7 +12,7 @@ class UserDetail extends Component {
 	}
 
 	componentDidMount() {
-		fetch('http://localhost:9000/vote/fetchList?userId='+ this.props.userId)
+		fetch('https://secure-castle-72860.herokuapp.com/vote/fetchList?userId='+ this.props.userId)
 		.then((res)=> {
 			if(res.ok){
 				return res;

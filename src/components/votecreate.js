@@ -82,7 +82,7 @@ class Create extends Component {
 			},
 			body: JSON.stringify(voteinfo)
 		}
-		fetch('http://localhost:9000/vote/publish', init)
+		fetch('https://secure-castle-72860.herokuapp.com/vote/publish', init)
 		.then((res) => {
 			if(res.ok){
 				return res;
